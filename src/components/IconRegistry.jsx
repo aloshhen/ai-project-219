@@ -1,130 +1,253 @@
-import React from 'react';
-import * as Icons from 'lucide-react';
+/**
+ * Icon Registry - Strict whitelist of allowed lucide-react icons
+ * This prevents AI hallucinations and ensures only valid icons are used
+ */
 
-const IconRegistry = {
+import {
+  // Basic UI
+  Home,
+  Menu,
+  X,
+  Search,
+  Settings,
+  User,
+  Users,
+  Bell,
+  Mail,
+  Phone,
+  
   // Navigation
-  home: Icons.Home,
-  menu: Icons.Menu,
-  x: Icons.X,
-  search: Icons.Search,
-  chevronDown: Icons.ChevronDown,
-  chevronUp: Icons.ChevronUp,
-  chevronLeft: Icons.ChevronLeft,
-  chevronRight: Icons.ChevronRight,
-  arrowRight: Icons.ArrowRight,
-  arrowLeft: Icons.ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  ChevronDown,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  ArrowDown,
   
   // Actions
-  check: Icons.Check,
-  checkCircle: Icons.CheckCircle,
-  plus: Icons.Plus,
-  minus: Icons.Minus,
-  edit: Icons.Edit,
-  trash: Icons.Trash,
-  copy: Icons.Copy,
-  share: Icons.Share,
-  download: Icons.Download,
-  upload: Icons.Upload,
-  send: Icons.Send,
+  Check,
+  Plus,
+  Minus,
+  Edit,
+  Trash,
+  Eye,
+  EyeOff,
+  Copy,
+  Share,
+  Send,
+  Download,
+  Upload,
   
   // Status
-  alertCircle: Icons.AlertCircle,
-  info: Icons.Info,
-  helpCircle: Icons.HelpCircle,
-  warning: Icons.AlertTriangle,
-  
-  // User
-  user: Icons.User,
-  users: Icons.Users,
-  userPlus: Icons.UserPlus,
-  logIn: Icons.LogIn,
-  logOut: Icons.LogOut,
-  settings: Icons.Settings,
-  
-  // Communication
-  mail: Icons.Mail,
-  messageSquare: Icons.MessageSquare,
-  phone: Icons.Phone,
-  bell: Icons.Bell,
-  
-  // Media
-  play: Icons.Play,
-  pause: Icons.Pause,
-  video: Icons.Video,
-  image: Icons.Image,
-  camera: Icons.Camera,
-  
-  // Gaming/CS:GO specific
-  target: Icons.Target,
-  crosshair: Icons.Crosshair,
-  shield: Icons.Shield,
-  sword: Icons.Sword,
-  zap: Icons.Zap,
-  flame: Icons.Flame,
-  trophy: Icons.Trophy,
-  award: Icons.Award,
-  star: Icons.Star,
-  heart: Icons.Heart,
-  skull: Icons.Skull,
-  
-  // Business
-  shoppingCart: Icons.ShoppingCart,
-  creditCard: Icons.CreditCard,
-  trendingUp: Icons.TrendingUp,
-  barChart: Icons.BarChart,
-  dollarSign: Icons.DollarSign,
-  
-  // Location
-  mapPin: Icons.MapPin,
-  map: Icons.Map,
-  navigation: Icons.Navigation,
-  globe: Icons.Globe,
-  
-  // Time
-  clock: Icons.Clock,
-  calendar: Icons.Calendar,
-  timer: Icons.Timer,
-  
-  // File
-  fileText: Icons.FileText,
-  folder: Icons.Folder,
-  paperclip: Icons.Paperclip,
-  
-  // Tech
-  code: Icons.Code,
-  terminal: Icons.Terminal,
-  cpu: Icons.Cpu,
-  wifi: Icons.Wifi,
+  AlertCircle,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Info,
+  HelpCircle,
   
   // Social
-  facebook: Icons.Facebook,
-  twitter: Icons.Twitter,
-  instagram: Icons.Instagram,
-  youtube: Icons.Youtube,
-  linkedin: Icons.Linkedin,
-  github: Icons.Github,
-  twitch: Icons.Twitch,
-  gamepad: Icons.Gamepad2,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Linkedin,
+  Github,
+  Globe,
+  Link,
+  ExternalLink,
   
-  // Weather/Environment
-  sun: Icons.Sun,
-  moon: Icons.Moon,
-  cloud: Icons.Cloud,
+  // Business
+  ShoppingCart,
+  CreditCard,
+  DollarSign,
+  TrendingUp,
+  TrendingDown,
+  BarChart,
+  PieChart,
   
-  // Objects
-  key: Icons.Key,
-  lock: Icons.Lock,
-  unlock: Icons.Unlock,
-  eye: Icons.Eye,
-  eyeOff: Icons.EyeOff,
-  filter: Icons.Filter,
-  grid: Icons.Grid3X3,
-  list: Icons.List,
-  moreHorizontal: Icons.MoreHorizontal,
-  moreVertical: Icons.MoreVertical,
+  // Files
+  File,
+  Folder,
+  Save,
+  Print,
+  Bookmark,
+  Calendar,
+  Clock,
+  Tag,
+  Flag,
   
-  // Default
-  help: Icons.HelpCircle
+  // Media
+  Image,
+  Video,
+  Camera,
+  Music,
+  Mic,
+  Headphones,
+  Volume,
+  Play,
+  Pause,
+  
+  // System
+  Lock,
+  Unlock,
+  Shield,
+  Database,
+  Server,
+  Cloud,
+  Wifi,
+  Battery,
+  Monitor,
+  Smartphone,
+  
+  // Design
+  Sun,
+  Moon,
+  Star,
+  Heart,
+  Zap,
+  Target,
+  Award,
+  Trophy,
+  Gift,
+  Coffee,
+  
+  type LucideIcon
+} from 'lucide-react';
+
+/**
+ * Icon Registry Map - Maps string keys to actual icon components
+ * Only these keys are valid for use with SafeIcon component
+ */
+export const ICON_REGISTRY: Record<string, LucideIcon> = {
+  // Basic UI
+  'home': Home,
+  'menu': Menu,
+  'x': X,
+  'search': Search,
+  'settings': Settings,
+  'user': User,
+  'users': Users,
+  'bell': Bell,
+  'mail': Mail,
+  'phone': Phone,
+  
+  // Navigation
+  'chevron-left': ChevronLeft,
+  'chevron-right': ChevronRight,
+  'chevron-up': ChevronUp,
+  'chevron-down': ChevronDown,
+  'arrow-left': ArrowLeft,
+  'arrow-right': ArrowRight,
+  'arrow-up': ArrowUp,
+  'arrow-down': ArrowDown,
+  
+  // Actions
+  'check': Check,
+  'plus': Plus,
+  'minus': Minus,
+  'edit': Edit,
+  'trash': Trash,
+  'eye': Eye,
+  'eye-off': EyeOff,
+  'copy': Copy,
+  'share': Share,
+  'send': Send,
+  'download': Download,
+  'upload': Upload,
+  
+  // Status
+  'alert-circle': AlertCircle,
+  'alert-triangle': AlertTriangle,
+  'check-circle': CheckCircle,
+  'x-circle': XCircle,
+  'info': Info,
+  'help-circle': HelpCircle,
+  
+  // Social
+  'facebook': Facebook,
+  'twitter': Twitter,
+  'instagram': Instagram,
+  'youtube': Youtube,
+  'linkedin': Linkedin,
+  'github': Github,
+  'globe': Globe,
+  'link': Link,
+  'external-link': ExternalLink,
+  
+  // Business
+  'shopping-cart': ShoppingCart,
+  'credit-card': CreditCard,
+  'dollar-sign': DollarSign,
+  'trending-up': TrendingUp,
+  'trending-down': TrendingDown,
+  'bar-chart': BarChart,
+  'pie-chart': PieChart,
+  
+  // Files
+  'file': File,
+  'folder': Folder,
+  'save': Save,
+  'print': Print,
+  'bookmark': Bookmark,
+  'calendar': Calendar,
+  'clock': Clock,
+  'tag': Tag,
+  'flag': Flag,
+  
+  // Media
+  'image': Image,
+  'video': Video,
+  'camera': Camera,
+  'music': Music,
+  'mic': Mic,
+  'headphones': Headphones,
+  'volume': Volume,
+  'play': Play,
+  'pause': Pause,
+  
+  // System
+  'lock': Lock,
+  'unlock': Unlock,
+  'shield': Shield,
+  'database': Database,
+  'server': Server,
+  'cloud': Cloud,
+  'wifi': Wifi,
+  'battery': Battery,
+  'monitor': Monitor,
+  'smartphone': Smartphone,
+  
+  // Design
+  'sun': Sun,
+  'moon': Moon,
+  'star': Star,
+  'heart': Heart,
+  'zap': Zap,
+  'target': Target,
+  'award': Award,
+  'trophy': Trophy,
+  'gift': Gift,
+  'coffee': Coffee,
 };
 
-export default IconRegistry;
+/**
+ * Type-safe icon keys - only these strings are valid
+ */
+export type IconKey = keyof typeof ICON_REGISTRY;
+
+/**
+ * Get list of all valid icon keys
+ */
+export const getValidIconKeys = (): IconKey[] => {
+  return Object.keys(ICON_REGISTRY) as IconKey[];
+};
+
+/**
+ * Check if a string is a valid icon key
+ */
+export const isValidIconKey = (key): key is IconKey => {
+  return key in ICON_REGISTRY;
+};
